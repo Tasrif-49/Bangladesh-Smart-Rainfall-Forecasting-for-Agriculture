@@ -11,9 +11,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 
 
-# ============================================================
 # PAGE CONFIG
-# ============================================================
 
 st.set_page_config(
     page_title="Bangladesh Rainfall & Agriculture System",
@@ -23,9 +21,7 @@ st.set_page_config(
 )
 
 
-# ============================================================
 # DESIGN
-# ============================================================
 
 INDIGO = "#0B1D33"
 SLATE = "#1B4965"
@@ -56,9 +52,7 @@ pio.templates["monsoon"].layout.yaxis.gridcolor = LINE
 pio.templates.default = "monsoon"
 
 
-# ============================================================
 # CSS
-# ============================================================
 
 st.markdown("""
 <style>
@@ -278,10 +272,7 @@ div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked){
 </style>
 """, unsafe_allow_html=True)
 
-
-# ============================================================
 # LOAD MODEL
-# ============================================================
 
 @st.cache_resource
 def load_model():
@@ -337,16 +328,14 @@ try:
 
 except Exception as e:
 
-    st.error("❌ File loading failed")
+    st.error(" File loading failed")
 
     st.exception(e)
 
     st.stop()
 
 
-# ============================================================
 # DATA CHECK
-# ============================================================
 
 required = [
 
